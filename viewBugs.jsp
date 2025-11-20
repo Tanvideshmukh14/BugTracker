@@ -43,7 +43,7 @@
     <td><%= p[1] %></td>
     <td><%= p[2] %></td>
     <td><%= p[3] %></td>
-    <td><%= p.length > 4 ? p[4] : "No comments" %></td>
+    <!-- <td><%= p.length > 4 ? p[4] : "No comments" %></td> -->
 
     <td>
         <form action="viewComments.jsp" method="get">
