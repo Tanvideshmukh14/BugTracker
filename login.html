@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bug Tracker Application</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f5f7;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .main-title {
+        font-size: 32px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+
+    .description {
+        font-size: 16px;
+        color: #555;
+        max-width: 550px;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+
+    .container {
+        width: 300px;
+        padding: 40px 60px;
+        background: white;
+        border-radius: 14px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+        font-size: 22px;
+        color: #555;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.25s;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .user-btn { background: #3b82f6; }
+    .user-btn:hover { background: #2563eb; }
+
+    .admin-btn { background: #ef4444; }
+    .admin-btn:hover { background: #dc2626; }
+
+</style>
+</head>
+
+<body>
+
+    <!-- Title OUTSIDE the box -->
+    <h1 class="main-title">Bug Tracker</h1>
+
+    <!-- Description OUTSIDE the box -->
+    <p class="description">
+      A simple system where users report bugs and admins resolve them.
+    </p>
+
+    <!-- Login form box -->
+    <div class="container">
+        <h2>Login As</h2>
+
+        <a href="index.jsp" class="btn user-btn">User</a>
+        <a href="devViewBugs.jsp" class="btn admin-btn">Admin</a>
+    </div>
+
+</body>
+</html>
