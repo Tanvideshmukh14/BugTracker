@@ -1,4 +1,4 @@
-1 | Login button not working | Login button does not respond when clicked on homepage | high
+1|Login button not working|Login button does not respond when clicked on homepage|high|In Progress
 2 | Dashboard slow loading | Dashboard takes more than 5 seconds to load after login | medium
 3 | Incorrect email validation | Email field accepts invalid formats without showing error | low
 4 | Profile picture not updating | Users cannot upload or update their profile image | medium

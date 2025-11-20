@@ -2,33 +2,28 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <%
-    // Handle Delete Request
+    // Handle Delete
     String deleteId = request.getParameter("deleteId");
     if (deleteId != null && !deleteId.trim().isEmpty()) {
         deleteId = deleteId.trim();
 
-        // Remove from bugs.txt
+        // Delete from bugs.txt
         String path = application.getRealPath("/data/bugs.txt");
         List<String> lines = FileHelper.readAll(path);
         List<String> updatedBugs = new ArrayList<>();
-
         for (String s : lines) {
             String[] p = s.split("\\|");
-            if (p.length >= 1 && !p[0].trim().equals(deleteId)) {
-                updatedBugs.add(s);
-            }
+            if (!p[0].trim().equals(deleteId)) updatedBugs.add(s);
         }
         FileHelper.writeAll(path, updatedBugs);
 
-        // Remove related comments
+        // Delete related comments
         String commentsPath = application.getRealPath("/data/comments.txt");
         List<String> commentLines = FileHelper.readAll(commentsPath);
         List<String> updatedComments = new ArrayList<>();
         for (String c : commentLines) {
             String[] pc = c.split("\\|");
-            if (pc.length >= 1 && !pc[0].trim().equals(deleteId)) {
-                updatedComments.add(c);
-            }
+            if (!pc[0].trim().equals(deleteId)) updatedComments.add(c);
         }
         FileHelper.writeAll(commentsPath, updatedComments);
 
@@ -48,23 +43,17 @@
 <h2 style="text-align:center;">All Bugs</h2>
 
 <%
-    // Read Bugs
     String path = application.getRealPath("/data/bugs.txt");
     List<String> lines = FileHelper.readAll(path);
 
-    // Read Comments
     String commentsPath = application.getRealPath("/data/comments.txt");
     List<String> commentLines = FileHelper.readAll(commentsPath);
-
-    // Map to store bugId → number of comments
     Map<String, Integer> commentCount = new HashMap<>();
     for (String c : commentLines) {
         String[] pc = c.split("\\|");
         if (pc.length >= 2) {
             String id = pc[0].trim();
-            if (!id.equals("") && !id.equals("null")) {
-                commentCount.put(id, commentCount.getOrDefault(id, 0) + 1);
-            }
+            commentCount.put(id, commentCount.getOrDefault(id, 0) + 1);
         }
     }
 
@@ -79,16 +68,18 @@
         <th>Title</th>
         <th>Description</th>
         <th>Severity</th>
+        <th>Status</th>
         <th>Comments</th>
         <th>Actions</th>
     </tr>
 
 <%
-        for (String s : lines) {
-           String[] p = s.split("\\|");
-           for (int i = 0; i < p.length; i++) p[i] = p[i].trim();
-           String id = p[0];
-           int count = commentCount.getOrDefault(id, 0);
+    for (String s : lines) {
+        String[] p = s.split("\\|");
+        for (int i = 0; i < p.length; i++) p[i] = p[i].trim();
+        String id = p[0];
+        String status = (p.length >= 5) ? p[4] : "Pending";
+        int count = commentCount.getOrDefault(id, 0);
 %>
 
 <tr>
@@ -96,6 +87,7 @@
     <td><%= p[1] %></td>
     <td><%= p[2] %></td>
     <td><%= p[3] %></td>
+    <td><%= status %></td>
     <td>
         <p><%= count %> Comments</p>
         <form action="viewComments.jsp" method="get">
@@ -104,7 +96,7 @@
         </form>
     </td>
     <td>
-        <form method="get">
+        <form method="get" style="display:inline;">
             <input type="hidden" name="deleteId" value="<%= id %>">
             <button type="submit" style="background:red;color:white;">Delete Bug</button>
         </form>
@@ -112,7 +104,7 @@
 </tr>
 
 <%
-        }
+    }
 %>
 </table>
 <%
