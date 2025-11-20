@@ -1,6 +1,6 @@
-1|Tanvi Deshmukh|Everything is resolved|Low
-2|muskan|errorr|Medium
-3|hvf|khv|Low
-4|sssssssssssssssssssssss|hhhhhhhhhhhhh|Low
-5|New error|It is not working|Low
-6|Tanvi|smcbjwubgfvce|Low
+1 | Login button not working | Login button does not respond when clicked on homepage | high
+2 | Dashboard slow loading | Dashboard takes more than 5 seconds to load after login | medium
+3 | Incorrect email validation | Email field accepts invalid formats without showing error | low
+4 | Profile picture not updating | Users cannot upload or update their profile image | medium
+5 | Search feature crash | Application crashes when searching with special characters | high
+6|login |It is not working|Medium
