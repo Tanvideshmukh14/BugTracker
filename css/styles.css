@@ -1,0 +1,197 @@
+/* ===== Root Theme ===== */
+:root{
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --accent-2: #06b6d4;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+  --shadow: 0 4px 18px rgba(0,0,0,0.08);
+  --radius: 12px;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg, var(--bg), #eef2fb 120%);
+  padding: 20px;
+}
+
+/* ===== Navigation Bar ===== */
+.top-nav {
+  width: 100%;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.nav-links a {
+  margin-left: 15px;
+  padding: 8px 14px;
+  font-weight: 600;
+  color: #000;
+  border: 1px solid #414141;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.2);
+}
+
+/* ===== Form Card (Add + Update Bug) ===== */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-card {
+  background: var(--card);
+  padding: 25px 30px;
+  width: 350px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  text-align:center;
+}
+
+.form-card form input,
+.form-card form select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+.form-card button {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.2s;
+}
+
+.form-card button:hover {
+  background: #1d4ed8;
+}
+
+/* Success messages */
+.success-msg,
+h3 {
+  text-align: center;
+  color: #10b981;
+  font-weight: 600;
+}
+
+/* ===== Home Page ===== */
+.home-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-btn {
+  text-decoration: none;
+  background: #547fdb;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.25s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.home-btn:hover {
+  background: #1e4fd0;
+  transform: translateY(-3px);
+}
+
+/* Elegant thin divider */
+.soft-divider {
+  width: 90%;
+  height: 1px;
+  margin: 35px auto;
+  background: #d8dee9;
+  position: relative;
+}
+
+.soft-divider::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  box-shadow: 0 0 14px rgba(0,0,0,0.25);
+}
+
+/* ===== Table (View Bugs) ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: linear-gradient(90deg,#fbfdff,#f7fbff);
+  color: var(--muted);
+  font-weight: 700;
+}
+
+tr:hover td {
+  background: rgba(37,99,235,0.03);
+}
