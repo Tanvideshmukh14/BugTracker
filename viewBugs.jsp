@@ -1,5 +1,142 @@
 <%@ page import="java.util.*, utils.FileHelper" %>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    /* Page background */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #e5ddd5; /* WhatsApp chat background */
+
+}
+
+/* NAVBAR */
+.top-nav {
+    background: #075e54;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.nav-links a {
+  margin-left: 15px;
+  padding: 8px 14px;
+  font-weight: 600;
+  color: #000;
+  border: 1px solid white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.nav-links a:hover {
+  background: white;
+  color: #075e54;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.2);
+}
+
+.top-nav .brand {
+    margin: 0;
+    font-size: 24px;
+}
+.brand{
+    color: white;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
+/* TITLE */
+h2 {
+    margin-top: 25px;
+    color: #333;
+}
+
+/* TABLE WRAPPER */
+table {
+    width: 90%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+/* TABLE HEADER */
+table th {
+    background: #075e54;
+    color: white;
+    padding: 12px;
+    font-size: 15px;
+    text-align: left;
+}
+
+/* TABLE ROW */
+table tr {
+    border-bottom: 1px solid #eee;
+}
+
+table td {
+    padding: 12px;
+    font-size: 15px;
+    color: #333;
+}
+
+/* HOVER EFFECT */
+table tr:hover {
+    background: #a2fcca2d;
+}
+
+/* STATUS BADGES */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.status-open { background: #e74c3c; }
+.status-progress { background: #f1c40f; color:black; }
+.status-resolved { background: #2ecc71; }
+.status-pending { background: #7f8c8d; }
+
+/* Buttons */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.view-btn {
+    background: #0A84FF;
+    color: white;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+</style>
 
 <%
     // Handle Delete
@@ -98,7 +235,7 @@
     <td>
         <form method="get" style="display:inline;">
             <input type="hidden" name="deleteId" value="<%= id %>">
-            <button type="submit" style="background:red;color:white;">Delete Bug</button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
         </form>
     </td>
 </tr>

@@ -19,7 +19,6 @@ body{
   background: linear-gradient(180deg, var(--bg), #eef2fb 120%);
   padding: 20px;
 }
-
 /* ===== Navigation Bar ===== */
 .top-nav {
   width: 100%;
@@ -34,32 +33,6 @@ body{
   align-items: center;
   margin-bottom: 22px;
 }
-
-.brand {
-  font-size: 1.4rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.nav-links a {
-  margin-left: 15px;
-  padding: 8px 14px;
-  font-weight: 600;
-  color: #000;
-  border: 1px solid #414141;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.nav-links a:hover {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color: white;
-  box-shadow: 0 4px 12px rgba(37,99,235,0.2);
-}
-
 /* ===== Form Card (Add + Update Bug) ===== */
 .form-wrapper {
   display: flex;

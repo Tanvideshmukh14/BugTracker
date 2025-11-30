@@ -2,21 +2,135 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <style>
-body { margin:0; padding:0; display:flex; flex-direction:column; height:100vh; background:#f7f7f7; }
-.comments-container { flex:1; overflow-y:auto; padding:20px; margin-bottom:120px; }
-.comment-bubble { max-width:70%; padding:12px 15px; border-radius:10px; margin:10px 0; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
-.comment-time { font-size:12px; color:#777; margin-top:5px; }
-.comment-dev { background:#e0e0e0; color:rgb(0, 0, 0); margin-left:auto; text-align:right; }  /* Right side for DEV */
-.comment-user { background:#c3e6ff; color:black; margin-right:auto; text-align:left; }  /* Left side for USER */
-.bottom-input { position:fixed; bottom:0; left:0; width:100%; background:white; padding:15px; border-top:2px solid #ddd; display:flex; gap:10px; align-items:center; }
-.bottom-input textarea { flex:1; height:60px; resize:none; padding:10px; border-radius:8px; border:1px solid #ccc; }
-.bottom-input button { background:#0077cc; color:white; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; }
-.top-nav { background:#0077cc; color:white; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
+    body {
+    margin: 0;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    background: #e5ddd5; /* WhatsApp chat background */
+}
+
+/* TOP NAV (WhatsApp style header) */
+.top-nav {
+    background: #075e54;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.top-nav h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* MAIN CHAT AREA */
+.comments-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    margin-bottom: 100px;
+    background-image: url("https://i.imgur.com/hwN7O8f.png"); /* WhatsApp pattern */
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+/* CHAT BUBBLES */
+.comment-bubble {
+    display: block;           /* forces each bubble to its own line */
+    width: fit-content;       /* bubble shrinks to message width */
+    max-width: 55%;           /* WhatsApp-style width */
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-radius: 12px;
+    line-height: 1.5;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* USER (right side) */
+.comment-user {
+    background: #dcf8c6;
+    margin-left: auto;        /* push to right */
+    margin-right: 12px;
+    border-top-right-radius: 0;
+}
+
+/* DEV (left side) */
+.comment-dev {
+    background: #ffffff;
+    margin-right: auto;       /* push to left */
+    margin-left: 12px;
+    border-top-left-radius: 0;
+}
+
+/* TIME */
+.comment-time {
+    font-size: 11px;
+    color: #65737e;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* BOTTOM INPUT BAR */
+.bottom-input {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f0f0f0;
+    padding: 10px 15px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.bottom-input textarea {
+    flex: 1;
+    height: 45px;
+    resize: none;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    background: white;
+    font-size: 14px;
+}
+
+/* SEND BUTTON */
+.bottom-input button {
+    background: #128c7e;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.bottom-input button:hover {
+    background: #0d7d71;
+}
+
 </style>
 
 <nav class="top-nav">
     <div><h2 style="margin:0;">Bug Comments</h2></div>
-    <div><a href="devViewBugs.jsp" style="color:white; text-decoration:none;">Back</a></div>
+    <div><a href="devViewBugs.jsp" style="color:white; text-decoration:none;">X</a></div>
 </nav>
 
 <%
