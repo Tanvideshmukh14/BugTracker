@@ -1,6 +1,25 @@
 null|using this command in the terminal |Thu Nov 20 11:05:49 IST 2025
-1|internet on|Thu Nov 20 12:02:57 IST 2025
+1|null|Issue observed: login button unresponsive on homepage across multiple browsers|Thu Nov 20 09:42:18 IST 2025
+1|USER|Please prioritize, this is blocking access for new users|Thu Nov 20 09:55:03 IST 2025
+1|DEV|Acknowledged. Investigating potential JavaScript event binding failure|Thu Nov 20 10:12:47 IST 2025
+1|DEV|Found root cause: missing onClick listener after latest UI deployment|Thu Nov 20 11:26:19 IST 2025
+1|USER|Kindly update once the fix is deployed to staging|Thu Nov 20 11:33:51 IST 2025
+1|DEV|Patch deployed to staging environment. Requesting verification|Thu Nov 20 12:04:29 IST 2025
+1|USER|Issue still persists on mobile viewports|Thu Nov 20 12:27:14 IST 2025
+2|null|Dashboard taking 7–8 seconds to load after authentication|Thu Nov 20 10:08:41 IST 2025
+2|USER|Performance degradation noted post recent data sync update|Thu Nov 20 10:16:22 IST 2025
+2|DEV|Analyzing SQL execution plan and API response payload size|Thu Nov 20 10:32:09 IST 2025
+2|DEV|Identified bottleneck: unindexed column causing full table scan|Thu Nov 20 11:15:47 IST 2025
+2|USER|Please share ETA for optimization rollout|Thu Nov 20 11:22:58 IST 2025
+2|DEV|Index created and query optimized. Deployment scheduled for EOD|Thu Nov 20 11:49:36 IST 2025
+3|DEV|Confirming requirement: enforce RFC standard validation rules|Thu Nov 20 09:49:52 IST 2025
+3|USER|Yes, standard regex enforcement is sufficient|Thu Nov 20 10:01:27 IST 2025
+3|DEV|Update in progress. Will notify once deployed for QA|Thu Nov 20 10:18:04 IST 2025
+4|null|Users unable to upload or update profile images; error logged on backend|Thu Nov 20 08:41:12 IST 2025
+4|DEV|Fix applied and verified in staging|Thu Nov 20 09:06:43 IST 2025
+4|USER|Retested and confirmed working across PNG and JPG formats|Thu Nov 20 09:18:55 IST 2025
+4|DEV|Marking ticket as completed and closed|Thu Nov 20 09:22:31 IST 2025
+5|null|Application crashes when users search using special characters (e.g., %, #)|Thu Nov 20 14:02:18 IST 2025
+5|USER|This is impacting multiple modules dependent on global search|Thu Nov 20 14:11:44 IST 2025
+5|DEV|Preliminary analysis indicates unhandled input sanitization in backend API|Thu Nov 20 14:26:59 IST 2025
 
-1|DEV|Do xyz|Thu Nov 20 12:56:21 IST 2025
-1|USER|okay lemme see|Thu Nov 20 12:56:34 IST 2025
-1|USER|its not working|Thu Nov 20 13:04:04 IST 2025
