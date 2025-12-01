@@ -41,9 +41,10 @@
     overflow-y: auto;
     padding: 20px;
     margin-bottom: 100px;
-    background-image: url("https://i.imgur.com/hwN7O8f.png"); /* WhatsApp pattern */
-    background-size: contain;
-    background-repeat: repeat;
+    background-image: url("commentsbg.jpg"); /* WhatsApp pattern */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* CHAT BUBBLES */
